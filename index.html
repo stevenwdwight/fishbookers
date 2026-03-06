@@ -75,9 +75,10 @@ nav ul a:hover{color:var(--white)}
 .p-card h3{font-size:1.15rem;margin-bottom:10px}
 .p-card p{color:var(--gray);font-size:.95rem;line-height:1.6}
 
-/* SOLUTION / 3 PILLARS */
+/* SOLUTION / 5 PILLARS */
 .pillars{background:var(--dark)}
 .pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.pillar-grid-bottom{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;margin-top:32px;max-width:800px;margin-left:auto;margin-right:auto}
 .pillar{background:linear-gradient(180deg,#0e1f3a,#0c1a30);border:1px solid rgba(255,255,255,.06);border-radius:20px;padding:44px 32px;transition:transform .3s,border-color .3s}
 .pillar:hover{transform:translateY(-4px);border-color:rgba(0,212,170,.3)}
 .pillar .pillar-num{font-family:'Space Grotesk',sans-serif;font-size:3rem;font-weight:700;color:var(--teal);opacity:.3;margin-bottom:12px}
@@ -117,12 +118,14 @@ nav ul a:hover{color:var(--white)}
 
 /* PRICING */
 .pricing{background:var(--darker)}
-.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch}
+.pricing-core{max-width:600px;margin:0 auto 32px}
+.pricing-addons{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:40px}
+.pricing-fullstack{max-width:700px;margin:0 auto;background:linear-gradient(180deg,#0e1f3a,#0c1a30);border:2px solid var(--teal);border-radius:20px;padding:40px 32px;text-align:center;box-shadow:0 0 40px var(--teal-glow)}
 .price-card{background:linear-gradient(180deg,#0e1f3a,#0c1a30);border:1px solid rgba(255,255,255,.06);border-radius:20px;padding:40px 32px;display:flex;flex-direction:column;transition:transform .3s ease,box-shadow .3s ease;position:relative}
 .price-card:hover{transform:translateY(-4px)}
-.price-card.popular{border-color:var(--teal);box-shadow:0 0 40px var(--teal-glow);transform:scale(1.04);z-index:2}
-.price-card.popular:hover{transform:scale(1.04) translateY(-4px)}
-.popular-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--teal);color:var(--dark);padding:6px 20px;border-radius:50px;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:1px}
+.price-card.core-card{border-color:var(--teal);box-shadow:0 0 40px var(--teal-glow)}
+.core-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--teal);color:var(--dark);padding:6px 20px;border-radius:50px;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:1px}
+.addon-label{display:inline-block;background:var(--orange);color:var(--white);padding:4px 12px;border-radius:50px;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px}
 .price-card h3{font-size:1.3rem;margin-bottom:8px}
 .price-card .price{font-size:3rem;font-weight:700;font-family:'Space Grotesk',sans-serif;margin:16px 0 4px}
 .price-card .price span{font-size:1rem;color:var(--gray);font-weight:400}
@@ -131,6 +134,10 @@ nav ul a:hover{color:var(--white)}
 .price-card ul li{padding:8px 0;font-size:.95rem;color:rgba(255,255,255,.8);border-bottom:1px solid rgba(255,255,255,.04)}
 .price-card ul li::before{content:'✓';color:var(--teal);font-weight:700;margin-right:10px}
 .price-card .btn{width:100%;text-align:center}
+.pricing-fullstack .price{font-size:3.5rem;font-weight:700;font-family:'Space Grotesk',sans-serif;margin:12px 0}
+.pricing-fullstack .price span{font-size:1rem;color:var(--gray);font-weight:400}
+.pricing-msg{text-align:center;margin-top:40px;color:var(--gray);font-size:.95rem;line-height:1.8}
+.pricing-msg strong{color:var(--white)}
 
 /* HOW IT WORKS */
 .how{background:var(--dark)}
@@ -161,9 +168,8 @@ footer{background:var(--darker);text-align:center;padding:40px 24px;color:var(--
 
 /* RESPONSIVE */
 @media(max-width:900px){
-  .pricing-grid,.pillar-grid,.steps,.problem-cards,.test-grid,.blog-grid,.story-grid{grid-template-columns:1fr}
-  .price-card.popular{transform:none}
-  .price-card.popular:hover{transform:translateY(-4px)}
+  .pricing-addons,.pillar-grid,.pillar-grid-bottom,.steps,.problem-cards,.test-grid,.blog-grid,.story-grid{grid-template-columns:1fr}
+  .pricing-core{max-width:100%}
   nav ul{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(10,22,40,.98);flex-direction:column;align-items:center;padding:24px 0;gap:16px;border-bottom:1px solid rgba(255,255,255,.06)}
   nav ul.open{display:flex}
   .menu-toggle{display:block}
@@ -196,10 +202,10 @@ footer{background:var(--darker);text-align:center;padding:40px 24px;color:var(--
 <section class="hero">
 <div class="hero-content reveal">
   <div class="tagline">Built by Captains & Guides. Powered by AI.</div>
-  <h1>Never Miss Another Booking</h1>
-  <p>We're charter operators who got tired of losing trips to voicemail. So we built an AI system that answers your phone, books your trips, and fills your boat — 24 hours a day, 7 days a week, for a fraction of what you'd pay a receptionist.</p>
+  <h1>The Complete Package for Charter Captains & Fishing Guides</h1>
+  <p>Website to revenue and everything in between. Nobody on the planet offers this complete package — customized to your fishery and style of fishing. No contract. Cancel anytime.</p>
   <a href="#demo" class="btn btn-primary">Hear It In Action 📞</a>
-  <a href="#solution" class="btn btn-outline">See How It Works</a>
+  <a href="#solution" class="btn btn-outline">See What's Included</a>
 </div>
 </section>
 
@@ -208,9 +214,9 @@ footer{background:var(--darker);text-align:center;padding:40px 24px;color:var(--
 <div class="container">
 <div class="cred-items reveal">
   <div class="cred-item"><strong>45+ Years</strong>On the water</div>
-  <div class="cred-item"><strong>5-Star Rated</strong>Charter operation</div>
+  <div class="cred-item"><strong>5 Pillars</strong>One complete package</div>
   <div class="cred-item"><strong>Live & Proven</strong>AI booking system</div>
-  <div class="cred-item"><strong>24/7</strong>Never miss a call</div>
+  <div class="cred-item"><strong>No Contracts</strong>Cancel anytime</div>
 </div>
 </div>
 </div>
@@ -222,13 +228,13 @@ footer{background:var(--darker);text-align:center;padding:40px 24px;color:var(--
   <div class="story-text">
     <span class="section-label">Our Story</span>
     <h2>We Didn't Start in Tech.<br>We Started on the Water.</h2>
-    <p>Fishbookers was born out of a simple frustration: <span class="highlight">we were losing bookings because we couldn't answer the phone.</span></p>
-    <p>You know the drill. You're 10 miles offshore with a customer fighting a lingcod. Your phone rings. By the time you get back to the dock, that caller booked with someone else.</p>
-    <p>We built an AI voice agent for our own charter operation — Pacific Charter Services in Charleston, Oregon. It worked. Calls got answered. Trips got booked. Confirmations went out. All while we were on the water.</p>
-    <p>Now we're making it available to every captain and guide who's tired of losing money to missed calls.</p>
+    <p><span class="highlight">We put together what we wished we had when we started.</span> Nobody offers this — a complete package for charter captains and fishing guides.</p>
+    <p>You know the drill. You're 10 miles offshore with a customer fighting a lingcod. Your phone rings. By the time you get back to the dock, that caller booked with someone else. Meanwhile, your website looks like it was built in 2005, and you're spending hours on admin instead of fishing.</p>
+    <p>We built the complete package for our own charter operation — Pacific Charter Services in Charleston, Oregon. Website, content, booking, AI, CRM — all of it. It worked. So we packaged it up for every captain and guide who wants to run a professional operation without the headache.</p>
+    <p>Every piece is customized to your fishery, your style of fishing, and your business. This is not a generic solution.</p>
   </div>
   <div class="story-img">
-    <div class="quote">"We built this for ourselves first. It worked so well, we knew every charter needed it."</div>
+    <div class="quote">"We put together what we wished we had when we started. Nobody offers this — a complete package for charter captains and fishing guides."</div>
     <div class="attribution">— Steven Dwight, Co-Founder<br><span style="color:var(--gray);font-weight:400;font-size:.85rem">30 years in tech • Charter operator • Fisherman</span></div>
   </div>
 </div>
@@ -241,71 +247,97 @@ footer{background:var(--darker);text-align:center;padding:40px 24px;color:var(--
 <div class="text-center reveal">
   <span class="section-label">The Problem</span>
   <h2 class="section-title">Captains Lose Bookings Every Single Day</h2>
-  <p class="section-subtitle">Not because the fish aren't biting. Because nobody answered the phone.</p>
+  <p class="section-subtitle">Not because the fish aren't biting. Because the business side is broken.</p>
 </div>
 <div class="problem-cards reveal">
   <div class="p-card">
     <span class="icon">📵</span>
     <h3>Missed Calls = Lost Revenue</h3>
-    <p>When you're on the water, in the shop, or eating dinner — calls go to voicemail. Most callers don't leave messages. They call the next charter.</p>
+    <p>When you're on the water, in the shop, or eating dinner — calls go to voicemail. Most callers don't leave messages. They call the next captain.</p>
   </div>
   <div class="p-card">
     <span class="icon">🕐</span>
-    <h3>Bookings Don't Wait</h3>
-    <p>Customers want to book NOW — not tomorrow when you return their call. Every hour of delay is a chance they book somewhere else.</p>
+    <h3>No Online Presence</h3>
+    <p>Customers search online before they book. If your website doesn't show up — or looks outdated — they book with whoever does show up.</p>
   </div>
   <div class="p-card">
     <span class="icon">💸</span>
-    <h3>Receptionists Cost a Fortune</h3>
-    <p>Hiring someone to answer phones costs thousands per month. And they only work certain hours. Your phone rings at 9 PM on a Sunday — who's answering?</p>
+    <h3>Piecing It All Together Costs a Fortune</h3>
+    <p>A website from one vendor. Booking software from another. SEO from someone else. None of it talks to each other, and it costs thousands a month.</p>
   </div>
 </div>
 </div>
 </section>
 
-<!-- 3 PILLARS - THE SOLUTION -->
+<!-- 5 PILLARS - THE SOLUTION -->
 <section class="pillars" id="solution">
 <div class="container">
 <div class="text-center reveal">
-  <span class="section-label">The Solution</span>
-  <h2 class="section-title">Three Things That Fill Your Boat</h2>
-  <p class="section-subtitle">A website that attracts customers. Content that builds trust. An AI agent that books the trip.</p>
+  <span class="section-label">The Complete Package</span>
+  <h2 class="section-title">Five Pillars That Run Your Business</h2>
+  <p class="section-subtitle">Website to revenue and everything in between. Customized to your fishery, your style of fishing, and your operation.</p>
 </div>
 <div class="pillar-grid reveal">
   <div class="pillar">
     <div class="pillar-num">01</div>
     <h3>🌐 A Killer Website</h3>
-    <p>Beautiful, fast, mobile-first. Built specifically for fishing charters with the photos, trip details, and trust signals that turn browsers into bookers.</p>
+    <p>A custom website built specifically for your charter or guide business. Beautiful, fast, mobile-first — designed to turn visitors into customers.</p>
     <ul>
       <li>Custom design for your operation</li>
       <li>Trip pages with pricing & details</li>
       <li>Photo galleries from your trips</li>
       <li>Customer reviews front and center</li>
-      <li>Mobile-first — works on any phone</li>
+      <li>Mobile-first — works on any device</li>
     </ul>
   </div>
   <div class="pillar">
     <div class="pillar-num">02</div>
     <h3>📝 Content That Drives Traffic</h3>
-    <p>Blog posts, fishing reports, species guides, and local content that fishing customers are already searching for. This is how they find you.</p>
+    <p>30 impactful blog posts that drive traffic to your site. Blog management and SEO optimized specifically for your fishery and area.</p>
     <ul>
-      <li>Weekly fishing reports</li>
-      <li>Species guides & seasonal tips</li>
-      <li>Local fishing knowledge articles</li>
-      <li>SEO optimized for your area</li>
+      <li>30 SEO-optimized blog posts</li>
+      <li>Fishing reports & species guides</li>
+      <li>Local content your customers search for</li>
+      <li>Ongoing blog management</li>
       <li>Content that ranks on Google</li>
     </ul>
   </div>
   <div class="pillar">
     <div class="pillar-num">03</div>
-    <h3>🤖 AI Voice Agent</h3>
-    <p>An AI that answers your phone like a real person. Checks your availability. Books the trip. Sends the confirmation. Transfers to you when needed. 24/7/365.</p>
+    <h3>📅 Booking Software</h3>
+    <p>Flat rate booking software. No percentage of your trips. Book as many as you want and keep all your revenue. Cancel anytime — use it just during peak season if you want.</p>
+    <ul>
+      <li>Flat rate — no percentage of trips</li>
+      <li>Book unlimited trips</li>
+      <li>Keep 100% of your revenue</li>
+      <li>Cancel anytime</li>
+      <li>Use peak season only if you want</li>
+    </ul>
+  </div>
+</div>
+<div class="pillar-grid-bottom reveal">
+  <div class="pillar">
+    <div class="pillar-num">04</div>
+    <h3>🤖 AI Booking Agent</h3>
+    <p>An AI voice agent that answers your calls and books trips. Use it part time, full time, or not at all — it's there when you need it. 24/7/365.</p>
     <ul>
       <li>Answers every call instantly</li>
       <li>Knows your trips, pricing & schedule</li>
       <li>Books & confirms automatically</li>
       <li>Transfers to you when needed</li>
-      <li>A fraction of the cost of staff</li>
+      <li>Use part time or full time</li>
+    </ul>
+  </div>
+  <div class="pillar">
+    <div class="pillar-num">05</div>
+    <h3>📊 CRM</h3>
+    <p>Customer tracking in-season and out-of-season. Automated outreach to your customer base that keeps you in front of your customers year-round.</p>
+    <ul>
+      <li>Track customers in & out of season</li>
+      <li>Automated email & SMS outreach</li>
+      <li>Stay in front of past customers</li>
+      <li>Seasonal campaign automation</li>
+      <li>Never lose a repeat customer</li>
     </ul>
   </div>
 </div>
@@ -412,50 +444,91 @@ footer{background:var(--darker);text-align:center;padding:40px 24px;color:var(--
   <h2 class="section-title">One Missed Trip Pays for Your Entire Month</h2>
   <p class="section-subtitle">No contracts. No setup fees. Cancel anytime.</p>
 </div>
-<div class="pricing-grid reveal">
-  <div class="price-card">
+
+<!-- CORE -->
+<div class="pricing-core reveal">
+  <div class="price-card core-card">
+    <div class="core-badge">⭐ The Core</div>
     <h3>🌐 Website + Content</h3>
-    <div class="desc">Look professional. Get found online.</div>
+    <div class="desc">Custom website + 30 SEO blog posts + ongoing blog management. The foundation of your online presence.</div>
     <div class="price">$150<span>/mo</span></div>
     <ul>
       <li>Custom charter website</li>
-      <li>Weekly fishing reports</li>
-      <li>Species guides & SEO content</li>
-      <li>Photo gallery</li>
+      <li>30 impactful SEO blog posts</li>
+      <li>Ongoing blog management</li>
+      <li>Optimized for your fishery & area</li>
+      <li>Photo gallery & trip pages</li>
       <li>Mobile-first design</li>
       <li>Hosting & SSL included</li>
     </ul>
-    <a href="#cta" class="btn btn-outline" style="border-color:rgba(255,255,255,.15)">Get Started</a>
-  </div>
-  <div class="price-card popular">
-    <div class="popular-badge">⭐ Most Popular</div>
-    <h3>🤖 Website + AI Voice Agent</h3>
-    <div class="desc">Never miss another booking. Ever.</div>
-    <div class="price">$350<span>/mo</span></div>
-    <ul>
-      <li>Everything in Website + Content</li>
-      <li>AI answers your phone 24/7</li>
-      <li>Books trips & checks availability</li>
-      <li>Sends email/SMS confirmations</li>
-      <li>Transfers to you anytime</li>
-      <li>Custom voice & personality</li>
-    </ul>
     <a href="#cta" class="btn btn-primary">Get Started</a>
   </div>
+</div>
+
+<!-- ADD-ONS -->
+<div class="text-center reveal" style="margin-bottom:24px">
+  <p style="color:var(--gray);font-size:1.05rem">Add the modules you need. Drop them when you don't.</p>
+</div>
+<div class="pricing-addons reveal">
   <div class="price-card">
-    <h3>📱 Full Service</h3>
-    <div class="desc">We run your entire digital operation.</div>
-    <div class="price">$500<span>/mo</span></div>
+    <div class="addon-label">Add-On</div>
+    <h3>📅 Booking Software</h3>
+    <div class="desc">Flat rate. No percentage of trips. Keep all your revenue.</div>
+    <div class="price">$150<span>/mo</span></div>
     <ul>
-      <li>Everything in AI Voice Agent</li>
-      <li>Social media management</li>
-      <li>Review generation & management</li>
-      <li>Email marketing campaigns</li>
-      <li>Monthly analytics report</li>
-      <li>Priority support</li>
+      <li>Unlimited bookings</li>
+      <li>No percentage of trips</li>
+      <li>Keep 100% of revenue</li>
+      <li>Cancel anytime</li>
+      <li>Use peak season only if you want</li>
     </ul>
-    <a href="#cta" class="btn btn-outline" style="border-color:rgba(255,255,255,.15)">Get Started</a>
+    <a href="#cta" class="btn btn-outline" style="border-color:rgba(255,255,255,.15)">Add Module</a>
   </div>
+  <div class="price-card">
+    <div class="addon-label">Add-On</div>
+    <h3>🤖 AI Booking Agent</h3>
+    <div class="desc">AI voice agent that answers calls and books trips. Use it your way.</div>
+    <div class="price">$100<span>/mo</span></div>
+    <ul>
+      <li>Answers calls 24/7</li>
+      <li>Books trips automatically</li>
+      <li>Sends confirmations</li>
+      <li>Transfers to you when needed</li>
+      <li>Use part time or full time</li>
+    </ul>
+    <a href="#cta" class="btn btn-outline" style="border-color:rgba(255,255,255,.15)">Add Module</a>
+  </div>
+  <div class="price-card">
+    <div class="addon-label">Add-On</div>
+    <h3>📊 CRM</h3>
+    <div class="desc">Customer tracking and automated outreach, in-season and out.</div>
+    <div class="price">$50<span>/mo</span></div>
+    <ul>
+      <li>Customer tracking year-round</li>
+      <li>Automated outreach campaigns</li>
+      <li>Stay in front of customers</li>
+      <li>Seasonal campaign automation</li>
+      <li>Never lose a repeat customer</li>
+    </ul>
+    <a href="#cta" class="btn btn-outline" style="border-color:rgba(255,255,255,.15)">Add Module</a>
+  </div>
+</div>
+
+<!-- FULL STACK -->
+<div class="pricing-fullstack reveal">
+  <h3>🎣 The Full Stack</h3>
+  <p style="color:var(--gray);margin:8px 0 0">Website + Content + Booking + AI Agent + CRM — the complete package</p>
+  <div class="price">$450<span>/mo</span></div>
+  <p style="color:var(--gray);font-size:.95rem;margin-bottom:24px">Everything. Managed for you. Nothing to touch.</p>
+  <a href="#cta" class="btn btn-primary">Get the Full Stack</a>
+</div>
+
+<div class="pricing-msg reveal">
+  <strong>No contracts.</strong> Cancel anytime. No setup fees.<br>
+  First and last month payment to get started.<br>
+  Includes a <strong>one-hour onboarding call</strong> to customize everything to your fishery, style of fishing, and business.<br>
+  <strong>Not happy? Full refund within 30 days.</strong><br>
+  We manage everything — you don't touch it.
 </div>
 </div>
 </section>
@@ -470,18 +543,18 @@ footer{background:var(--darker);text-align:center;padding:40px 24px;color:var(--
 <div class="steps reveal">
   <div class="step">
     <div class="step-num">1</div>
-    <h3>Tell Us About Your Operation</h3>
-    <p>Your trips, your boat, your style. A 20-minute call is all we need.</p>
+    <h3>One-Hour Onboarding Call</h3>
+    <p>Your trips, your boat, your fishery, your style. One hour so we can customize everything to your operation.</p>
   </div>
   <div class="step">
     <div class="step-num">2</div>
     <h3>We Build Everything</h3>
-    <p>Website, content, AI voice agent — all customized to your operation. Done in 48 hours.</p>
+    <p>Website, content, booking, AI agent, CRM — all customized to your operation. Done in 48 hours.</p>
   </div>
   <div class="step">
     <div class="step-num">3</div>
-    <h3>Your Phone Starts Answering</h3>
-    <p>Calls get answered. Trips get booked. Confirmations go out. Automatically.</p>
+    <h3>Your Business Runs Itself</h3>
+    <p>Calls get answered. Trips get booked. Customers come back. Automatically.</p>
   </div>
   <div class="step">
     <div class="step-num">4</div>
@@ -510,11 +583,11 @@ footer{background:var(--darker);text-align:center;padding:40px 24px;color:var(--
   </div>
   <div class="faq-item">
     <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Do I need to be technical?</div>
-    <div class="faq-a">Not at all. If you can answer a 20-minute phone call about your charter, we can build everything. You don't touch any technology.</div>
+    <div class="faq-a">Not at all. We handle everything. You just show up for the one-hour onboarding call and tell us about your operation. You don't touch any technology.</div>
   </div>
   <div class="faq-item">
-    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What booking systems do you work with?</div>
-    <div class="faq-a">We integrate with FareHarbor, Checkfront, Peek, and most major booking platforms. If you use something else, we'll make it work.</div>
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can I just use some of the modules?</div>
+    <div class="faq-a">Absolutely. Start with the core Website + Content package and add modules as you need them. Only want booking software during peak season? No problem. Add it, drop it, your call.</div>
   </div>
   <div class="faq-item">
     <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How is this different from an answering service?</div>
@@ -522,7 +595,7 @@ footer{background:var(--darker);text-align:center;padding:40px 24px;color:var(--
   </div>
   <div class="faq-item">
     <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can I cancel anytime?</div>
-    <div class="faq-a">Yes. No contracts, no commitments. But most captains stay — because one booked trip pays for the whole month.</div>
+    <div class="faq-a">Yes. No contracts, no commitments. Plus we offer a 30-day money-back guarantee — if you're not happy, full refund. But most captains stay, because one booked trip pays for the whole month.</div>
   </div>
 </div>
 </div>
@@ -531,8 +604,8 @@ footer{background:var(--darker);text-align:center;padding:40px 24px;color:var(--
 <!-- FINAL CTA -->
 <section class="final-cta" id="cta">
 <div class="container reveal">
-  <h2>Stop Losing Bookings to Voicemail 🎣</h2>
-  <p>Built by charter operators, for charter operators. One missed trip covers your entire month. Let's get your AI crew working in 48 hours.</p>
+  <h2>The Complete Package. Built for You. 🎣</h2>
+  <p>Built by charter captains and fishing guides, for charter captains and fishing guides. Nobody else on the planet offers this. Let's get you set up.</p>
   <a href="mailto:steven@stevendwight.com?subject=I%20want%20Fishbookers" class="btn btn-primary" style="margin-bottom:24px">Get Started Now</a>
   <br><br>
   <a href="mailto:steven@stevendwight.com" class="email-link">steven@stevendwight.com</a>
